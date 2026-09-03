@@ -52,7 +52,7 @@ public class Main {
             "Fever"
         );
 
-        // Insert patients
+
         patientTree.insert(p1);
         patientTree.insert(p2);
         patientTree.insert(p3);
@@ -60,16 +60,12 @@ public class Main {
         patientTree.insert(p5);
         patientTree.insert(p6);
 
-        // Display patients
         System.out.println("PATIENTS IN ASCENDING ORDER");
-       
-
         patientTree.displayInOrder();
 
-        // Search
-        System.out.println("\nSEARCHING FOR PATIENT 107");
-      
 
+        // SEARCH
+        System.out.println("\nSEARCHING FOR PATIENT 107");
         Patient found = patientTree.search(107);
 
         if (found != null) {
@@ -78,15 +74,32 @@ public class Main {
             System.out.println("Patient not found.");
         }
 
-        // Delete
+    
+        // DELETE
         System.out.println("\nDELETING PATIENT 101");
-       
-
         patientTree.delete(101);
 
         System.out.println("\nPATIENTS AFTER DELETION");
-       
-
         patientTree.displayInOrder();
+
+        // EMERGENCY PATIENT QUEUE
+        EmergencyQueue emergencyQueue = new EmergencyQueue();
+
+        System.out.println("\n\nADDING PATIENTS TO EMERGENCY QUEUE");
+        emergencyQueue.enqueue(p1);
+        emergencyQueue.enqueue(p2);
+        emergencyQueue.enqueue(p3);
+
+        emergencyQueue.displayQueue();
+
+        System.out.println("\nTREATING NEXT PATIENT");
+        Patient nextPatient = emergencyQueue.dequeue();
+
+        if (nextPatient != null) {
+            System.out.println(
+                "Now treating: " + nextPatient.getPatientName()
+            );
+        }
+        emergencyQueue.displayQueue();
     }
 }

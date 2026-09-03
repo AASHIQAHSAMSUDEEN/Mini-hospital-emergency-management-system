@@ -1,6 +1,5 @@
 public class PatientBST {
 
-    // Node of the BST
     private class Node {
 
         Patient patient;
