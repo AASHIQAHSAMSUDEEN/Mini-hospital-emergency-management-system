@@ -1,7 +1,7 @@
 public class TreatmentStack {
 
+   
     private class Node {
-
         Treatment treatment;
         Node next;
 
@@ -50,6 +50,7 @@ public class TreatmentStack {
 
         return treatment;
     }
+
     public void displayStack() {
 
         if (top == null) {
@@ -67,6 +68,7 @@ public class TreatmentStack {
             current = current.next;
         }
     }
+
     public boolean isEmpty() {
         return top == null;
     }
