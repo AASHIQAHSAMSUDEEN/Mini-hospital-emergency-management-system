@@ -87,7 +87,7 @@ public class PatientBST {
         }
     }
 
-    // DELETE patient
+    // DELETE 
     public void delete(int patientId) {
 
         if (search(patientId) == null) {

@@ -101,5 +101,65 @@ public class Main {
             );
         }
         emergencyQueue.displayQueue();
+
+
+        TreatmentStack treatmentStack = new TreatmentStack();
+        System.out.println("\n\nADDING TREATMENT RECORDS");
+
+        Treatment t1 = new Treatment(
+            1,
+            105,
+            "Ahamed",
+            "Dr. Perera",
+            "2026-09-04",
+            "Medication prescribed for fever"
+        );
+
+        Treatment t2 = new Treatment(
+            2,
+            101,
+            "Fathima",
+            "Dr. Silva",
+            "2026-09-04",
+            "Pain relief treatment"
+        );
+        
+        Treatment t3 = new Treatment(
+             3,
+             110,
+             "Mohamed",
+             "Dr. Fernando",
+             "2026-09-04",
+            "Asthma treatment"
+        );
+        
+        //push
+        treatmentStack.push(t1);
+        treatmentStack.push(t2);
+        treatmentStack.push(t3);
+        treatmentStack.displayStack();
+
+        //pop
+        System.out.println("\nREMOVING MOST RECENT TREATMENT");
+        Treatment removedTreatment = treatmentStack.pop();
+        if (removedTreatment != null) {
+
+
+             System.out.println(
+                "Removed treatment for: "
+                + removedTreatment.getPatientName()
+            );
+        }
+        treatmentStack.displayStack();
+        
+        System.out.println("\nREMOVING REMAINING TREATMENTS");
+        treatmentStack.pop();
+        treatmentStack.pop();
+
+        System.out.println("\nTRYING TO REMOVE FROM EMPTY STACK");
+
+        treatmentStack.pop();
     }
+
+
 }
