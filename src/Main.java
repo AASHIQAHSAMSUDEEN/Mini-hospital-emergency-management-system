@@ -157,8 +157,71 @@ public class Main {
         treatmentStack.pop();
 
         System.out.println("\nTRYING TO REMOVE FROM EMPTY STACK");
-
         treatmentStack.pop();
+
+
+
+
+        System.out.println("\n\nPATIENT VISIT HISTORY");
+
+        Visit v1 = new Visit(     
+            1,
+            "2026-09-01",
+            "Dr. Perera",
+            "Fever",
+            "Medication prescribed"
+        );
+
+        Visit v2 = new Visit(
+            2,
+            "2026-09-03",
+            "Dr. Silva",
+            "Headache",
+            "Pain relief treatment"
+        );
+
+        p1.getVisitHistory().addVisit(v1);
+        p1.getVisitHistory().addVisit(v2);
+
+        System.out.println("\nVisits for " + p1.getPatientName());
+
+        p1.getVisitHistory().displayVisits();
+
+
+
+        System.out.println("\nSEARCHING FOR VISIT 2");
+        Visit foundVisit = p1.getVisitHistory().searchVisit(2);
+
+        if (foundVisit != null) {
+
+             System.out.println("Visit found:");
+             foundVisit.displayVisit();
+
+        } else {
+             System.out.println("Visit not found.");
+        }
+
+
+         System.out.println("\nREMOVING VISIT 1");
+         p1.getVisitHistory().removeVisit(1); 
+         p1.getVisitHistory().displayVisits();
+
+
+
+        System.out.println("\nVISIT HISTORY FOR ANOTHER PATIENT");
+
+        Visit v3 = new Visit(
+            3,
+            "2026-09-02",
+            "Dr. Fernando",
+            "Asthma",
+            "Inhaler prescribed"
+     );
+
+        p3.getVisitHistory().addVisit(v3);
+        System.out.println("\nVisits for " + p3.getPatientName());
+
+        p3.getVisitHistory().displayVisits();
     }
 
 
